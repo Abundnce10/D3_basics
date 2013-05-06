@@ -20,7 +20,11 @@
 
         var color = d3.scale.linear()
                         .domain([0, 60])
-                        .range(["red", "blue"])        
+                        .range(["red", "blue"])  
+
+        var axis = d3.svg.axis()
+                    .ticks(5)
+                    .scale(widthScale);      
 
 
         var canvas = d3.select("body")
@@ -28,7 +32,8 @@
             .attr("width", 500)
             .attr("height", 500)
             .append("g")                              // group
-            .attr("transform", "translate(50, 50)");  // (horizontal, vertical)
+            .attr("transform", "translate(20, 0)");   // (horizontal, vertical)
+
 
 
         var bars = canvas.selectAll("rect")
@@ -42,6 +47,10 @@
 
 
 
+
+        canvas.append("g")
+            .attr("transform", "translate(0, 400)")
+            .call(axis);
 
     </script>
 
