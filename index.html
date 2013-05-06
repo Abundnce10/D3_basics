@@ -10,7 +10,7 @@
 
     <script>
 
-        var dataArray = [20, 40, 50, 60];
+        var dataArray = [5, 40, 50, 60];
         var width = 500;
         var height = 500;
 
@@ -27,6 +27,9 @@
             .append("svg")
             .attr("width", 500)
             .attr("height", 500)
+            .append("g")                              // group
+            .attr("transform", "translate(50, 50)");  // (horizontal, vertical)
+
 
         var bars = canvas.selectAll("rect")
                     .data(dataArray)
